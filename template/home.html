@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{%  extends 'base.html'%}
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% block content %}
+<h1 class ="text-center"> Student Dettials Page</h1>
+<hr>
+<br>
+<table class="table table-bordered">
+    {%for student in students %}
+    <tr>
+        <td> {{student.id}}</td>
+        <td> {{student.first_name}}</td>
+        <td> {{student.last_name}}</td>
+        <td>{{student.email}}</td>
+        <td><a class="btn btn-primary" href="{% url 'student' student.id %}">click</a></td>
+    </tr>
+    {%endfor%}
+</table>
+
+</body>
+{% endblock %}
+</html>
